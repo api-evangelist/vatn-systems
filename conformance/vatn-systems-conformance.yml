@@ -1,0 +1,81 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.vatn.com/products
+note: >-
+  Vatn Systems publishes no machine-readable contract (no OpenAPI, AsyncAPI, GraphQL SDL, Protobuf or
+  WSDL was found on any host on 2026-09-02), so nothing here is derived from a spec. Every entry below
+  is a claim made in prose on Vatn's own product pages, and each is graded on that basis. The
+  domain_standard_conformance dimension the rubric reads requires the standard to be DECLARED IN THE
+  CONTRACT; because there is no contract, that dimension is not satisfiable for this provider today
+  even though the TAK integration claim is real and specific.
+standards:
+- id: tak-cot
+  name: TAK / Team Awareness Kit (ATAK, CivTAK, MilTAK, WinTAK)
+  conforms: true
+  basis: vendor-documented
+  contract_declared: false
+  evidence:
+    url: https://www.vatn.com/uuv-mission-planning
+    status: 200
+    quote: >-
+      "Vatn's ATAK plugin gives operators real-time control of the entire fleet via Android tablet or
+      phone, integrating directly into existing command and control systems... Available on CivTAK,
+      MilTAK, and WinTAK."
+  note: >-
+    The strongest domain-standard signal Vatn publishes. AEsir is separately described as "TAK-Native"
+    and able to "leverage TAK as both a communications backbone and an operator interface". No CoT
+    message schema, plugin manifest or integration reference is published publicly.
+- id: aesir-tak-native
+  name: TAK-native sensor fusion (AEsir)
+  conforms: true
+  basis: vendor-documented
+  contract_declared: false
+  evidence:
+    url: https://www.vatn.com/aesir-maritime-sensor-fusion
+    status: 200
+    quote: >-
+      "delivers operator-ready intelligence across TAK-enabled networks... AEsir is designed to operate
+      within the TAK ecosystem."
+- id: utm-coordinates
+  name: Universal Transverse Mercator (UTM) coordinate output
+  conforms: true
+  basis: vendor-documented
+  contract_declared: false
+  evidence:
+    url: https://www.vatn.com/fuse-data-fusion
+    status: 200
+    quote: >-
+      "Target state in relative position or Universal Transverse Mercator (UTM) coordinates. Plug
+      directly into command and control systems."
+- id: fuse-open-protocol
+  name: FUSE topside result protocol (described as open source)
+  conforms: false
+  basis: claimed-not-published
+  contract_declared: false
+  evidence:
+    url: https://www.vatn.com/fuse-data-fusion
+    status: 200
+    quote: >-
+      "Open Integration. Engineering display included. Open source protocol for pushing results into
+      custom topside applications."
+  note: >-
+    THIS IS THE SINGLE BIGGEST PUBLISHING GAP AT VATN. The product page asserts an open-source protocol
+    for pushing FUSE tracking results into third-party topside applications, but no protocol
+    specification, schema, repository or reference could be found. The company's GitHub organization
+    (github.com/Vatn-Systems, created 2023-10-02, blog field vatnsystems.com) has zero public
+    repositories. Publishing that protocol - as a schema, an AsyncAPI, or simply a repo - would convert
+    a marketing claim into a verifiable integration contract.
+- id: oauth2
+  conforms: false
+  evidence: 'no OAuth surface; /.well-known/oauth-authorization-server returned 404'
+- id: oidc
+  conforms: false
+  evidence: 'no OIDC surface; /.well-known/openid-configuration returned 404'
+- id: rfc9457
+  conforms: false
+  evidence: no HTTP API published, so no problem+json error envelope exists
+certifications: []
+certifications_note: >-
+  No trust center, SOC 2, ISO 27001, CMMC or ITAR registration statement is published on vatn.com.
+  probe-security-programs.py returned vdp=none trust=none on 2026-09-02. No Compliance pointer is
+  emitted in apis.yml, because nothing is published to point at.

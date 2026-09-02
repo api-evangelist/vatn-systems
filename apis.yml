@@ -1,8 +1,19 @@
 aid: vatn-systems
 name: Vatn Systems
-description: 'Vatn Systems is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Vatn Systems is a Bristol, Rhode Island defense technology company founded in 2023 that designs and
+  manufactures low-cost, modular autonomous underwater vehicles (UUVs/AUVs) and the autonomy, navigation
+  and acoustic-processing software that runs on them. Its product line spans the Skelmir S6 (6-inch,
+  man-portable, swarm-capable) and Skelmir S12 (12.75-inch medium-class) vehicles, Eyra 5.1 and Eyra 8.0
+  passive hydrophone arrays, and four software systems - INStinct (maritime inertial navigation for
+  GPS-denied operation), PARse (embedded acoustic signal processing on ARM), FUSE (multi-sensor tracking,
+  distributed as a Docker image) and AEsir (TAK-native sensor fusion and mission planning). Mission
+  planning is delivered through an ATAK/CivTAK/MilTAK/WinTAK plugin and Fathom, a browser-based mission
+  planner and vehicle configurator. Vatn raised a $60M Series A in December 2025 (total funding $76.5M)
+  and acquired Crewless Marine. It publishes no public developer portal, API reference or machine-readable
+  contract; every integration surface is reached through a demo request or supplier form.
 url: https://raw.githubusercontent.com/api-evangelist/vatn-systems/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/69e61f7946f26d81602ead45/6a23169440288fd66c322f74_webclip-vatn.jpg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +23,14 @@ created: '2026-09-02'
 modified: '2026-09-02'
 tags:
 - Company
+- Defense
+- Autonomous Systems
+- Maritime
+- Robotics
+- Underwater Vehicles
+- Navigation
+- Sensor Fusion
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,50 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/vatn-systems_stock/
+  url: https://www.vatn.com/
+- type: About
+  url: https://www.vatn.com/about
+- type: Blog
+  url: https://www.vatn.com/news
+- type: Support
+  url: https://www.vatn.com/contact
+- type: GitHubOrganization
+  url: https://github.com/Vatn-Systems
+- type: LinkedIn
+  url: https://www.linkedin.com/company/vatnsystems/
+- type: Twitter
+  url: https://x.com/vatnsystems
+- type: DomainSecurity
+  url: security/vatn-systems-domain-security.yml
+- type: Conformance
+  url: conformance/vatn-systems-conformance.yml
+- type: Plans
+  url: plans/vatn-systems-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/vatn-systems-llms.txt
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Vatn's FUSE product page advertises an "Open source protocol for pushing results into custom
+    topside applications" and PARse is offered as a third-party integration license, but neither
+    protocol, schema nor repository is published anywhere - github.com/Vatn-Systems has zero public
+    repos - and the only route to either is the "Request a Demo" / "Contact Sales" / "Become a
+    Supplier" Google Form on a Webflow marketing site with no developer section.
+  evidence:
+    - url: https://www.vatn.com/fuse-data-fusion
+      status: 200
+    - url: https://www.vatn.com/openapi.json
+      status: 404
+    - url: https://www.vatn.com/.well-known/agent-card.json
+      status: 404
+    - url: https://www.vatn.com/llms.txt
+      status: 404
+    - url: https://api.github.com/orgs/Vatn-Systems/repos
+      status: 200
+  checked: '2026-09-02'

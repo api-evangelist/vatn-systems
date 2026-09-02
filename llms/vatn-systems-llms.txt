@@ -1,0 +1,79 @@
+# Vatn Systems
+
+> Vatn Systems is a Bristol, Rhode Island defense technology company founded in 2023 that designs and
+> manufactures low-cost, modular autonomous underwater vehicles (UUVs/AUVs) plus the autonomy,
+> navigation and acoustic-processing software that runs on them. It publishes no public API, no
+> developer portal, and no machine-readable contract of any kind.
+
+Provenance: generated 2026-09-02 by the API Evangelist enrichment pipeline from apis.yml and the
+artifacts in this repository, after probing vatn.com. This file is written BY API Evangelist about
+Vatn Systems; it is not published by Vatn Systems. Vatn's own /llms.txt returned HTTP 404 on
+2026-09-02.
+
+## What Vatn Systems sells
+
+Vehicles (UUVs)
+- Skelmir S6 — 6-inch diameter, man-portable, modular, swarm-capable compact AUV: https://www.vatn.com/skelmir-s6-small-auv-drone
+- Skelmir S12 — medium-class 12.75-inch platform with extended range and payload capacity: https://www.vatn.com/skelmir-s12-medium-auv-drone
+
+Sensors (hydrophone arrays)
+- Eyra 5.1 — rigid-mount hydrophone array optimized for unmanned platforms: https://www.vatn.com/eyra-5-1-multi-hydrophone-array
+- Eyra 8.0 — custom-geometry hydrophone array for mission-specific sensing: https://www.vatn.com/eyra-8-0-hydropone-array
+
+Software systems
+- INStinct — maritime inertial navigation for GPS-denied operation; MEMS-to-FOG modular sensor architecture, DVL integration, fuses customer-provided aiding sources: https://www.vatn.com/auv-inertial-navigation-system
+- PARse — embedded acoustic signal processing (filtering, beamforming, normalization, detection, angle estimation) running on 32/64-bit ARM (proven on Zynq MicroZed and Jetson Nano); included with Eyra arrays and separately licensable for third-party platforms: https://www.vatn.com/parse-acoustic-signal-processing
+- FUSE — multi-sensor multi-target tracking engine distributed as a Docker image for x86-64; outputs target state in relative or UTM coordinates: https://www.vatn.com/fuse-data-fusion
+- AEsir — TAK-native sensor fusion and common operating picture; ingests heterogeneous detections and tracks: https://www.vatn.com/aesir-maritime-sensor-fusion
+- SIGURD: https://www.vatn.com/sigurd
+- Mission planning — ATAK plugin (CivTAK, MilTAK, WinTAK) and Fathom, a browser-based mission planner and vehicle configurator: https://www.vatn.com/uuv-mission-planning
+
+## Integration surfaces (all private; none has a published contract)
+
+- TAK / Cursor-on-Target: AEsir is described as TAK-native and Vatn ships an ATAK plugin. No CoT
+  message schema or plugin manifest is published.
+- FUSE topside protocol: the FUSE page states "Open source protocol for pushing results into custom
+  topside applications." No specification, schema or repository for that protocol could be found.
+- PARse "configurable ingest": accepts a customer element data format. The format is not documented
+  publicly.
+- INStinct aiding-source interface: "provides a straightforward interface to integrate other sensors."
+  No interface control document is published publicly.
+- Fathom: a browser-based configurator that connects to the vehicle. No HTTP API is documented and no
+  host for it resolves publicly.
+
+## What does NOT exist (probed 2026-09-02, every path returned 404)
+
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Protobuf or WSDL.
+- No developer portal, API reference, or docs host. api./docs./developer./developers./app./portal./
+  status./mcp.vatn.com all fail to resolve (NXDOMAIN).
+- No /.well-known/ documents: security.txt, openid-configuration, oauth-authorization-server,
+  oauth-protected-resource, api-catalog, ai-plugin.json, agent-card.json and agent.json all 404.
+- No MCP server, no A2A agent card, no llms.txt.
+- No SDKs or client libraries on npm, PyPI, or any other registry.
+- No public repositories: github.com/Vatn-Systems exists (created 2023-10-02) but is empty.
+- No pricing or plans page; no sign-up. Sales is a demo request or a supplier form.
+- No status page, changelog, deprecation policy, or vulnerability-disclosure program.
+- The footer's Privacy Policy, Terms & Conditions and Accessibility Statement links are href="#"
+  placeholders, not documents.
+
+## Company
+
+- Website: https://www.vatn.com/ (vatnsystems.com redirects here)
+- About: https://www.vatn.com/about
+- News: https://www.vatn.com/news
+- Careers: https://www.vatn.com/careers
+- Contact: https://www.vatn.com/contact
+- Become a Supplier: https://docs.google.com/forms/d/e/1FAIpQLSfBzL8z1SItEYcmy-FSdYKFE7Bk5E-6jS-8bDTRwHnGWJvI-Q/viewform
+- GitHub: https://github.com/Vatn-Systems (0 public repositories)
+- LinkedIn: https://www.linkedin.com/company/vatnsystems/
+- X: https://x.com/vatnsystems
+
+Founded 2023 by Nelson Mills (CEO), Freddie Mills, Geoff Manchester (CTO) and Dan Hendrix. Based at
+500 Wood St., Bristol, RI 02809. Raised a $13M seed (Nov 2024) and a $60M Series A (Dec 2025), total
+funding $76.5M. Acquired Crewless Marine. Production facility in Bristol rated to roughly 2,000 units
+per year.
+
+## How to reach Vatn Systems as a machine
+
+You cannot. There is no programmatic surface. Every path to Vatn's technology runs through a human:
+"request capability brief", "Request a Demo", "Contact Sales", or the Become a Supplier form.

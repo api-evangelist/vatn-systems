@@ -1,0 +1,35 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTPS probes of the named /.well-known paths on the Vatn Systems web host
+note: >-
+  Every named path returned 404. www.vatn.com is a Webflow-hosted marketing site; requests under
+  /.well-known/ are answered by a Webflow handler returning "Invalid .well-known request" with a
+  404 status, so no document of any kind is served. No WellKnown or SecurityTxt pointer is emitted
+  in apis.yml because nothing was served - this file records a verified absence, not a presence.
+hosts:
+- host: www.vatn.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

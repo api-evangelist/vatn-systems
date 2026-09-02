@@ -1,0 +1,22 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.vatn.com/
+plan_count: 0
+currency: null
+note: >-
+  Vatn Systems publishes no pricing page, no plans, and no self-serve purchase path. It is a defense
+  hardware and defense-software vendor selling UUVs, hydrophone arrays and licensed software
+  (PARse is described as "available as a standalone license"; FUSE ships as a Docker image) through
+  government and allied-partner procurement. Every commercial call to action on the site is a
+  conversation - "request capability brief", "Request a Demo", "Contact Sales", and a "Become a
+  Supplier" Google Form. The site navigation and footer were walked in full on 2026-09-02: there is
+  no /pricing, /plans, /store or equivalent, and the footer's Privacy Policy, Terms & Conditions and
+  Accessibility Statement links are all href="#" placeholders rather than real documents.
+plans: []
+evidence:
+- url: https://www.vatn.com/
+  status: 200
+  observed: no pricing link in primary nav or footer
+- url: https://www.vatn.com/uuv-mission-planning
+  status: 200
+  observed: 'calls to action are "Request a demo" and "Contact Sales"'
